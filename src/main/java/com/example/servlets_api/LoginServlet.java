@@ -9,12 +9,12 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 
-@WebServlet(name = "loginServlet", value = "/login")
+@WebServlet(name = "loginServlet", value = "/loginIn")
 public class LoginServlet extends HttpServlet {
 
     @Override
     protected void  doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        //resp.sendRedirect("login.html");
+        resp.sendRedirect("login.jsp");
     }
 
     @Override
