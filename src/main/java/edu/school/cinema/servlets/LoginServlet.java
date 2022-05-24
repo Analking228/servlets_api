@@ -1,4 +1,4 @@
-package com.example.servlets_api;
+package edu.school.cinema.servlets;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
