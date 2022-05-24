@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 
-@WebServlet(name = "loginServlet", value = "/loginIn")
+@WebServlet(name = "loginServlet", value = "/signIn")
 public class LoginServlet extends HttpServlet {
 
     @Override
