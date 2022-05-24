@@ -14,7 +14,7 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void  doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.sendRedirect("login.jsp");
+        resp.sendRedirect("jsp/login.jsp");
     }
 
     @Override
@@ -24,7 +24,7 @@ public class LoginServlet extends HttpServlet {
             String username = req.getParameter("username");
             String password = req.getParameter("password");
             if (username.equals("loler228") && password.equals("aye1337")) {
-                resp.sendRedirect("home.html");
+                resp.sendRedirect("html/home.html");
             }
             else {
                 printWriter.write("wrong username or password");

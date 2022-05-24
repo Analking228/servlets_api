@@ -6,7 +6,7 @@
 </head>
 <body>
     <div style="margin:0 auto;">
-    <form style="margin:0 auto;" action="/login" method="post">
+    <form style="margin:0 auto;" action="/loginIn" method="post">
         <table>
             <tr>
                 <th>Username:</th>
