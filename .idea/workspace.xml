@@ -10,17 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9bd25052-7c87-4b95-867a-4d6905516283" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/school/cinema/models/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/school/cinema/models/UserMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/school/cinema/repositories/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/school/cinema/repositories/UserRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sql/data.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sql/schema.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/jsp/signUp.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/school/cinema/servlets/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/school/cinema/servlets/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/signIn.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +25,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="jsf" />
       </list>
     </option>
   </component>
@@ -175,7 +169,8 @@
       <option name="presentableId" value="Default" />
       <updated>1653395402869</updated>
       <workItem from="1653395404424" duration="2561000" />
-      <workItem from="1653405393979" duration="3310000" />
+      <workItem from="1653405393979" duration="3653000" />
+      <workItem from="1653551556600" duration="1744000" />
     </task>
     <servers />
   </component>

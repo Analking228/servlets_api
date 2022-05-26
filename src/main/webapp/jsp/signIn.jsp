@@ -21,6 +21,10 @@
                 </label></th>
             </tr>
             <tr>
+                <th>Check me out</th>
+                <th><input type="checkbox" class="form-check-input" id="exampleCheck1"/></th>
+            </tr>
+            <tr>
                 <th></th>
                 <th><input type="submit" value="loginIn"/></th>
             </tr>
