@@ -10,10 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9bd25052-7c87-4b95-867a-4d6905516283" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/jsp/signUp.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/school/cinema/servlets/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/school/cinema/servlets/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/signIn.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsp/signIn.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/signIn.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +23,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="jsf" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -170,7 +169,9 @@
       <updated>1653395402869</updated>
       <workItem from="1653395404424" duration="2561000" />
       <workItem from="1653405393979" duration="3653000" />
-      <workItem from="1653551556600" duration="1744000" />
+      <workItem from="1653551556600" duration="3073000" />
+      <workItem from="1653769456956" duration="3470000" />
+      <workItem from="1653901644341" duration="630000" />
     </task>
     <servers />
   </component>
