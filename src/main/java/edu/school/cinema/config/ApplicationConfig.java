@@ -19,7 +19,7 @@ public class ApplicationConfig {
     private String  driver;
     @Value("${datasource.url}")
     private String  url;
-    @Value("${datasource.username}")
+    @Value("${datasource.login}")
     private String  username;
     @Value("${datasource.password}")
     private String  password;
