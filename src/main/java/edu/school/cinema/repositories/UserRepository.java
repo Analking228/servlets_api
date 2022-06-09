@@ -4,6 +4,6 @@ import edu.school.cinema.models.User;
 import java.sql.SQLException;
 
 public interface UserRepository<T> extends CrudRepository<T> {
-    boolean findByLogin(String login) throws SQLException;
-    User    findObjByLogin(String login) throws SQLException;
+    boolean findByEmail(String login) throws SQLException;
+    User    findObjByEmail(String login) throws SQLException;
 }

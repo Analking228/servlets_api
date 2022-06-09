@@ -27,15 +27,15 @@ public class UserRepositoryImpl implements UserRepository<User>{
     }
 
     @Override
-    public boolean findByLogin(String login) throws SQLException {
+    public boolean findByEmail(String email) throws SQLException {
         String sql = "SELECT EXISTS (SELECT FROM cinema.users WHERE login = ?)";
-        return Boolean.TRUE.equals(this.jdbcTemplate.queryForObject(sql, Boolean.class, login));
+        return Boolean.TRUE.equals(this.jdbcTemplate.queryForObject(sql, Boolean.class, email));
     }
 
     @Override
-    public User findObjByLogin(String login) throws SQLException {
+    public User findObjByEmail(String email) throws SQLException {
         String sql = "SELECT EXISTS (SELECT * FROM cinema.users WHERE login = ?)";
-        List<User> users = this.jdbcTemplate.query(sql, new UserMapper(), login);
+        List<User> users = this.jdbcTemplate.query(sql, new UserMapper(), email);
         if (!users.isEmpty())
             for (User u : users)
                 return u;

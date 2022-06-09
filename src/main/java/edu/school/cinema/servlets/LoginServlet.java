@@ -14,20 +14,20 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void  doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.sendRedirect("jsp/signIn.jsp");
+        resp.sendRedirect("signIn.jsp");
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html");
         try (PrintWriter printWriter = resp.getWriter()){
-            String username = req.getParameter("username");
+            String email = req.getParameter("email");
             String password = req.getParameter("password");
-            if (username.equals("loler228") && password.equals("aye1337")) {
-                resp.sendRedirect("html/home.html");
+            if (email.equals("loler228@yandex.ru") && password.equals("aye1337")) {
+                resp.sendRedirect("home.html");
             }
             else {
-                printWriter.write("wrong username or password");
+                printWriter.write("wrong email or password");
             }
         }
     }
