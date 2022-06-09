@@ -2,14 +2,18 @@ package edu.school.cinema.repositories;
 
 import edu.school.cinema.models.User;
 import edu.school.cinema.models.UserMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
 
 import java.sql.SQLException;
 import java.util.List;
 
+@Repository
 public class UserRepositoryImpl implements UserRepository<User>{
     private final JdbcTemplate jdbcTemplate;
 
+    @Autowired
     public UserRepositoryImpl(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
