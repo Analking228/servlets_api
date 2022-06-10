@@ -9,7 +9,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9bd25052-7c87-4b95-867a-4d6905516283" name="Changes" comment="" />
+    <list default="true" id="9bd25052-7c87-4b95-867a-4d6905516283" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/school/cinema/servlets/RegistrationServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/school/cinema/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/school/cinema/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/school/cinema/models/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/school/cinema/models/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/school/cinema/repositories/UserRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/school/cinema/repositories/UserRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/sql/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sql/data.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/sql/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sql/schema.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/signUp.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/signUp.jsp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -169,6 +178,8 @@
       <workItem from="1653769456956" duration="3470000" />
       <workItem from="1653901644341" duration="836000" />
       <workItem from="1654770431783" duration="6072000" />
+      <workItem from="1654801557217" duration="380000" />
+      <workItem from="1654893686420" duration="1269000" />
     </task>
     <servers />
   </component>

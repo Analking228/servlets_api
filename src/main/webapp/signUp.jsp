@@ -32,7 +32,7 @@
         Register page
     </h1>
 
-    <form action="signup_result" method="post">
+    <form action="signUp" method="post">
         <div class="form-group">
             <label for="exampleInputName">First Name</label>
             <input type="text" class="form-control" name="first_name" id="exampleInputName" aria-describedby="emailHelp" placeholder="Enter your name">

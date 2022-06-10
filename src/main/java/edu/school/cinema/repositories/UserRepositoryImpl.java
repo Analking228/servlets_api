@@ -26,19 +26,19 @@ public class UserRepositoryImpl implements UserRepository<User>{
 
     @Override
     public void save(User item) throws SQLException {
-        String  sql = "INSERT INTO cinema.users(login, password) values(?,?)";
-        this.jdbcTemplate.update(sql, item.getLogin(), item.getPassword());
+        String  sql = "INSERT INTO cinema.users(email, password) values(?,?)";
+        this.jdbcTemplate.update(sql, item.getEmail(), item.getPassword());
     }
 
     @Override
     public boolean findByEmail(String email) throws SQLException {
-        String sql = "SELECT EXISTS (SELECT FROM cinema.users WHERE login = ?)";
+        String sql = "SELECT EXISTS (SELECT FROM cinema.users WHERE email = ?)";
         return Boolean.TRUE.equals(this.jdbcTemplate.queryForObject(sql, Boolean.class, email));
     }
 
     @Override
     public User findObjByEmail(String email) throws SQLException {
-        String sql = "SELECT EXISTS (SELECT * FROM cinema.users WHERE login = ?)";
+        String sql = "SELECT EXISTS (SELECT * FROM cinema.users WHERE email = ?)";
         List<User> users = this.jdbcTemplate.query(sql, new UserMapper(), email);
         if (!users.isEmpty())
             for (User u : users)
