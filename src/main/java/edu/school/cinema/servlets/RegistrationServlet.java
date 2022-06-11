@@ -50,7 +50,7 @@ public class RegistrationServlet extends HttpServlet {
             String  password = req.getParameter("password");
             user.setPassword(password);
             userService.save(user);
-            if (userService.findByEmail(user.getEmail()))
+            if (userService.cryptDataEquals(password, email))
                 resp.sendRedirect("home.html");
         } catch (SQLException e) {
             e.printStackTrace();

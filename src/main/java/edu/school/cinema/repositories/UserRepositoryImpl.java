@@ -4,6 +4,7 @@ import edu.school.cinema.models.User;
 import edu.school.cinema.models.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Repository;
 
 import java.sql.SQLException;
@@ -11,11 +12,13 @@ import java.util.List;
 
 @Repository
 public class UserRepositoryImpl implements UserRepository<User>{
-    private final JdbcTemplate jdbcTemplate;
+    private final PasswordEncoder   passwordEncoder;
+    private final JdbcTemplate      jdbcTemplate;
 
     @Autowired
-    public UserRepositoryImpl(JdbcTemplate jdbcTemplate) {
+    public UserRepositoryImpl(JdbcTemplate jdbcTemplate, PasswordEncoder passwordEncoder) {
         this.jdbcTemplate = jdbcTemplate;
+        this.passwordEncoder = passwordEncoder;
     }
 
     @Override
@@ -26,8 +29,11 @@ public class UserRepositoryImpl implements UserRepository<User>{
 
     @Override
     public void save(User item) throws SQLException {
-        String  sql = "INSERT INTO cinema.users(email, password) values(?,?)";
-        this.jdbcTemplate.update(sql, item.getEmail(), item.getPassword());
+        String  sql = "INSERT INTO cinema.users(first_name, last_name, phone_number, email, password)" +
+                " values(?,?,?,?,?)";
+        String password = passwordEncoder.encode(item.getPassword());
+        this.jdbcTemplate.update(sql, item.getFirstName(), item.getLastName(), item.getPhoneNumber(),
+                item.getEmail(), password);
     }
 
     @Override
@@ -44,6 +50,15 @@ public class UserRepositoryImpl implements UserRepository<User>{
             for (User u : users)
                 return u;
         return null;
+    }
+
+    @Override
+    public boolean cryptDataEquals(String password, String email) throws SQLException {
+        System.out.println(email);
+        System.out.println("Truble not here");
+        User user = this.findObjByEmail(email);
+        System.out.println("Truble here");
+        return passwordEncoder.matches(password, user.getPassword());
     }
 
     @Override

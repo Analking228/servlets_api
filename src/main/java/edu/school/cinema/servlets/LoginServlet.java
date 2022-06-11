@@ -1,6 +1,7 @@
 package edu.school.cinema.servlets;
 
 import edu.school.cinema.config.ApplicationConfig;
+import edu.school.cinema.models.User;
 import edu.school.cinema.repositories.UserRepositoryImpl;
 import edu.school.cinema.services.UserService;
 import org.springframework.context.ApplicationContext;
@@ -44,14 +45,14 @@ public class LoginServlet extends HttpServlet {
         try (PrintWriter printWriter = resp.getWriter()){
             String email = req.getParameter("email");
             String password = req.getParameter("password");
-            if (userService.findByEmail(email)) {
+            if (userService.cryptDataEquals(password, email)) {
                 resp.sendRedirect("home.html");
             }
             else {
                 printWriter.write("wrong email or password");
             }
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 }

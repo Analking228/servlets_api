@@ -10,15 +10,6 @@ public class User {
     private String  lastName;
     private String  phoneNumber;
 
-//    public User(String login) {
-//        this.login = login;
-//    }
-
-//    public User(Long user_id, String login, String password) {
-//        this.user_id = user_id;
-//        this.login = login;
-//        this.password = password;
-//    }
     private User() {}
 
     public static User getUser() {return new User();}

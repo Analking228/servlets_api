@@ -10,14 +10,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9bd25052-7c87-4b95-867a-4d6905516283" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/school/cinema/servlets/RegistrationServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/school/cinema/config/ApplicationConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/school/cinema/config/ApplicationConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/school/cinema/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/school/cinema/models/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/school/cinema/models/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/school/cinema/models/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/school/cinema/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/school/cinema/repositories/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/school/cinema/repositories/UserRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/school/cinema/repositories/UserRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/school/cinema/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/school/cinema/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/school/cinema/servlets/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/school/cinema/servlets/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/school/cinema/servlets/RegistrationServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/school/cinema/servlets/RegistrationServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/sql/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sql/data.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/sql/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sql/schema.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/signUp.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/signUp.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +63,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="database.main" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -179,7 +183,8 @@
       <workItem from="1653901644341" duration="836000" />
       <workItem from="1654770431783" duration="6072000" />
       <workItem from="1654801557217" duration="380000" />
-      <workItem from="1654893686420" duration="1269000" />
+      <workItem from="1654893686420" duration="1465000" />
+      <workItem from="1654954715898" duration="5482000" />
     </task>
     <servers />
   </component>
