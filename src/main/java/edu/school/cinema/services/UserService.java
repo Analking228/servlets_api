@@ -45,7 +45,7 @@ public class UserService {
         return userRepository.findObjByEmail(email);
     }
 
-    public boolean  cryptDataEquals(String password, String email) throws SQLException {
-        return userRepository.cryptDataEquals(password, email);
+    public boolean  passwordMatch(String password, String email) throws SQLException {
+        return userRepository.passwordMatch(password, email);
     }
 }

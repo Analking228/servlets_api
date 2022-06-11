@@ -45,15 +45,13 @@ public class UserRepositoryImpl implements UserRepository<User>{
     @Override
     public User findObjByEmail(String email) throws SQLException {
         String sql = "SELECT EXISTS (SELECT * FROM cinema.users WHERE email = ?)";
-        List<User> users = this.jdbcTemplate.query(sql, new UserMapper(), email);
-        if (!users.isEmpty())
-            for (User u : users)
-                return u;
-        return null;
+        User user = this.jdbcTemplate.queryForObject(sql, new UserMapper(), email);
+        System.out.println("SFDSDSDSDSD");
+        return user;
     }
 
     @Override
-    public boolean cryptDataEquals(String password, String email) throws SQLException {
+    public boolean passwordMatch(String password, String email) throws SQLException {
         System.out.println(email);
         System.out.println("Truble not here");
         User user = this.findObjByEmail(email);

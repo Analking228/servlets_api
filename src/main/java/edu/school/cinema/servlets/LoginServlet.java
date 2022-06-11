@@ -45,7 +45,7 @@ public class LoginServlet extends HttpServlet {
         try (PrintWriter printWriter = resp.getWriter()){
             String email = req.getParameter("email");
             String password = req.getParameter("password");
-            if (userService.cryptDataEquals(password, email)) {
+            if (userService.passwordMatch(password, email)) {
                 resp.sendRedirect("home.html");
             }
             else {
