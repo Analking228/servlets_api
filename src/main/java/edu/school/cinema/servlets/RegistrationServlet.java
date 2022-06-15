@@ -1,11 +1,11 @@
 package edu.school.cinema.servlets;
 
-import edu.school.cinema.config.ApplicationConfig;
 import edu.school.cinema.models.User;
 import edu.school.cinema.services.UserService;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.ApplicationContext;
 
 import javax.servlet.ServletConfig;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -23,19 +23,18 @@ public class RegistrationServlet extends HttpServlet {
     @Override
     public void init(ServletConfig config) throws ServletException {
         super.init(config);
-        AnnotationConfigApplicationContext springContext = new AnnotationConfigApplicationContext(
-                ApplicationConfig.class
-        );
+        ServletContext context = config.getServletContext();
+        ApplicationContext springContext = (ApplicationContext) context.getAttribute("springContext");
         this.userService = springContext.getBean("userService", UserService.class);
     }
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         resp.sendRedirect("signUp.jsp");
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         resp.setContentType("html/text");
         User    user = User.getUser();
         try(PrintWriter printWriter = resp.getWriter()) {

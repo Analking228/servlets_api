@@ -38,24 +38,19 @@ public class UserRepositoryImpl implements UserRepository<User>{
 
     @Override
     public boolean findByEmail(String email) throws SQLException {
-        String sql = "SELECT EXISTS (SELECT FROM cinema.users WHERE email = ?)";
+        String sql = "SELECT EXISTS (SELECT * FROM cinema.users WHERE email = ?)";
         return Boolean.TRUE.equals(this.jdbcTemplate.queryForObject(sql, Boolean.class, email));
     }
 
     @Override
     public User findObjByEmail(String email) throws SQLException {
-        String sql = "SELECT EXISTS (SELECT * FROM cinema.users WHERE email = ?)";
-        User user = this.jdbcTemplate.queryForObject(sql, new UserMapper(), email);
-        System.out.println("SFDSDSDSDSD");
-        return user;
+        String sql = "(SELECT * FROM cinema.users WHERE email = ?)";
+        return this.jdbcTemplate.queryForObject(sql, new UserMapper(), email);
     }
 
     @Override
     public boolean passwordMatch(String password, String email) throws SQLException {
-        System.out.println(email);
-        System.out.println("Truble not here");
         User user = this.findObjByEmail(email);
-        System.out.println("Truble here");
         return passwordEncoder.matches(password, user.getPassword());
     }
 

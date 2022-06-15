@@ -3,7 +3,7 @@ package edu.school.cinema.models;
 import java.util.Objects;
 
 public class User {
-    private Long    user_id;
+    private int    user_id;
     private String  email;
     private String  password;
     private String  firstName;
@@ -14,11 +14,11 @@ public class User {
 
     public static User getUser() {return new User();}
 
-    public Long getUser_id() {
+    public int getUser_id() {
         return user_id;
     }
 
-    public void setUser_id(Long user_id) {
+    public void setUser_id(int user_id) {
         this.user_id = user_id;
     }
 

@@ -28,9 +28,8 @@ public class LoginServlet extends HttpServlet {
     @Override
     public void init(ServletConfig config) throws ServletException {
         super.init(config);
-        AnnotationConfigApplicationContext springContext = new AnnotationConfigApplicationContext(
-                ApplicationConfig.class
-        );
+        ServletContext context = config.getServletContext();
+        ApplicationContext springContext = (ApplicationContext) context.getAttribute("springContext");
         this.userService = springContext.getBean("userService", UserService.class);
     }
 
