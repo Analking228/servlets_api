@@ -12,9 +12,7 @@ import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -35,23 +33,35 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void  doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.sendRedirect("signIn.jsp");
+        req.getRequestDispatcher("signIn.jsp").forward(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html");
-        try (PrintWriter printWriter = resp.getWriter()){
-            String email = req.getParameter("email");
-            String password = req.getParameter("password");
-            if (userService.passwordMatch(password, email)) {
-                resp.sendRedirect("home.html");
+        HttpSession session = req.getSession();
+        User sessionUser = (User) req.getAttribute("user");
+        if (sessionUser == null || sessionUser.getEmail().equals(req.getParameter("email"))) {
+            try {
+                String email = req.getParameter("email");
+                String password = req.getParameter("password");
+                if (userService.findByEmail(email)) {
+                    User user = userService.findObjByEmail(email);
+                    if (userService.passwordMatch(password, email)) {
+                        session.setAttribute("user", user);
+                        Cookie userName = new Cookie("user_name", user.getFirstName());
+                        session.setAttribute("name", user.getFirstName());
+                        resp.addCookie(userName);
+                        resp.sendRedirect("profile.jsp");
+                    } else {
+                        resp.sendRedirect(req.getContextPath() + "signIn");
+                    }
+                } else {
+                    resp.sendRedirect(req.getContextPath() + "signIn");
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
-            else {
-                printWriter.write("wrong email or password");
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
         }
     }
 }
