@@ -11,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -30,27 +31,36 @@ public class RegistrationServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-        req.getRequestDispatcher("signUp.jsp").forward(req,resp);
+        HttpSession session = req.getSession();
+        User sessionUser = (User) session.getAttribute("user");
+        if (sessionUser != null) resp.sendRedirect("profile.jsp");
+        else req.getRequestDispatcher("signUp.jsp").forward(req,resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         resp.setContentType("html/text");
-        User    user = User.getUser();
-        try(PrintWriter printWriter = resp.getWriter()) {
+        HttpSession session = req.getSession();
+        User    sessionUser = new User();
+        try {
             String  firstName = req.getParameter("first_name");
-            user.setFirstName(firstName);
+            sessionUser.setFirstName(firstName);
             String  lastName = req.getParameter("last_name");
-            user.setLastName(lastName);
+            sessionUser.setLastName(lastName);
             String  phoneNumber = req.getParameter("phone_number");
-            user.setPhoneNumber(phoneNumber);
+            sessionUser.setPhoneNumber(phoneNumber);
             String  email = req.getParameter("email");
-            user.setEmail(email);
+            sessionUser.setEmail(email);
             String  password = req.getParameter("password");
-            user.setPassword(password);
-            userService.save(user);
-            if (userService.passwordMatch(password, email))
-                resp.sendRedirect("home.html");
+            sessionUser.setPassword(password);
+            userService.save(sessionUser);
+            if (userService.passwordMatch(password, email)) {
+                session.setAttribute("user", sessionUser);
+                session.setAttribute("name", sessionUser.getFirstName());
+                session.setAttribute("last_name", sessionUser.getLastName());
+                session.setAttribute("email", sessionUser.getEmail());
+            }
+            resp.sendRedirect("profile.jsp");
         } catch (SQLException e) {
             e.printStackTrace();
         }

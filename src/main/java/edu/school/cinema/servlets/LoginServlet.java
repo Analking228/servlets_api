@@ -38,7 +38,6 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.setContentType("text/html");
         HttpSession session = req.getSession();
         User sessionUser = (User) req.getAttribute("user");
         if (sessionUser == null || sessionUser.getEmail().equals(req.getParameter("email"))) {
@@ -51,6 +50,8 @@ public class LoginServlet extends HttpServlet {
                         session.setAttribute("user", user);
                         Cookie userName = new Cookie("user_name", user.getFirstName());
                         session.setAttribute("name", user.getFirstName());
+                        session.setAttribute("last_name", user.getLastName());
+                        session.setAttribute("email", user.getEmail());
                         resp.addCookie(userName);
                         resp.sendRedirect("profile.jsp");
                     } else {

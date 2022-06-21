@@ -3,16 +3,14 @@ package edu.school.cinema.models;
 import java.util.Objects;
 
 public class User {
-    private int    user_id;
+    private int     user_id;
     private String  email;
     private String  password;
     private String  firstName;
     private String  lastName;
     private String  phoneNumber;
 
-    private User() {}
-
-    public static User getUser() {return new User();}
+    public User() {}
 
     public int getUser_id() {
         return user_id;

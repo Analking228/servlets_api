@@ -137,8 +137,8 @@
         <div>
             <div class="main-chars">
                 <p>Name: <span><%= session.getAttribute("name")%></span></p>
-                <p>Surname: <span><%= request.getAttribute("surname")%></span></p>
-                <p>E-mail:<span><%= request.getAttribute("email")%></span></p>
+                <p>Surname: <span><%= session.getAttribute("last_name")%></span></p>
+                <p>E-mail:<span><%= session.getAttribute("email")%></span></p>
             </div>
             <div class="table1">
                 <div>
@@ -154,40 +154,6 @@
         </div>
     </div>
     <br><br>
-    <h2>Uploaded files</h2>
-    <br>
-    <div class="table2">
-        <div>
-            <div class="colored"><p>File name</p></div>
-            <c:forEach var = "url" items="${urls}">
-                <c:if test="${url !=''}">
-                    <div><p>
-                        <a href="/loadImage/<%= request.getAttribute("id")%>/${url}" target="_blank">${url}</a>
-                    </p></div>
-                </c:if>
-            </c:forEach>
-        </div>
-        <div>
-            <div class="colored"><p>Size</p></div>
-            <c:forEach var = "size" items="${sizes}">
-                <c:if test="${size != 0}">
-                    <div><p>
-                            ${size} Kb
-                    </p></div>
-                </c:if>
-            </c:forEach>
-        </div>
-        <div class="right-border">
-            <div class="colored"><p>MIME</p></div>
-            <c:forEach var = "mimeType" items="${mimeTypes}">
-                <c:if test="${mimeType !=''}">
-                    <div><p>
-                            ${mimeType}
-                    </p></div>
-                </c:if>
-            </c:forEach>
-        </div>
-    </div>
 </div>
 </body>
 </html>
