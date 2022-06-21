@@ -1,12 +1,8 @@
 package edu.school.cinema.servlets;
 
-import edu.school.cinema.config.ApplicationConfig;
 import edu.school.cinema.models.User;
-import edu.school.cinema.repositories.UserRepositoryImpl;
 import edu.school.cinema.services.UserService;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.ApplicationContextInitializer;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
@@ -14,7 +10,6 @@ import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.SQLException;
 
 
@@ -33,7 +28,10 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void  doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("signIn.jsp").forward(req, resp);
+        HttpSession session = req.getSession();
+        User    sessionUser = (User) session.getAttribute("user");
+        if (sessionUser != null) resp.sendRedirect("profile.jsp");
+        else req.getRequestDispatcher("signIn.jsp").forward(req, resp);
     }
 
     @Override

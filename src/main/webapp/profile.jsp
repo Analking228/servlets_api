@@ -130,9 +130,9 @@
     <h1>
         Profile page
     </h1>
-    <FORM NAME="form1" ACTION="logout" METHOD="post">
+    <form NAME="form1" action="logout" METHOD="post">
         <INPUT TYPE="SUBMIT" VALUE="Logout">
-    </FORM>
+    </form>
     <div class="wrapper">
         <div>
             <div class="main-chars">
