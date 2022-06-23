@@ -33,8 +33,8 @@ public class RegistrationServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
         HttpSession session = req.getSession();
         User sessionUser = (User) session.getAttribute("user");
-        if (sessionUser != null) resp.sendRedirect("profile.jsp");
-        else req.getRequestDispatcher("signUp.jsp").forward(req,resp);
+        if (sessionUser != null) resp.sendRedirect("/profile");
+        else req.getRequestDispatcher("jsp/signUp.jsp").forward(req,resp);
     }
 
     @Override
@@ -60,7 +60,7 @@ public class RegistrationServlet extends HttpServlet {
                 session.setAttribute("last_name", sessionUser.getLastName());
                 session.setAttribute("email", sessionUser.getEmail());
             }
-            resp.sendRedirect("profile.jsp");
+            resp.sendRedirect("/profile");
         } catch (SQLException e) {
             e.printStackTrace();
         }

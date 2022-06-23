@@ -30,8 +30,8 @@ public class LoginServlet extends HttpServlet {
     protected void  doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
         User    sessionUser = (User) session.getAttribute("user");
-        if (sessionUser != null) resp.sendRedirect("profile.jsp");
-        else req.getRequestDispatcher("signIn.jsp").forward(req, resp);
+        if (sessionUser != null) resp.sendRedirect("/profile");
+        else req.getRequestDispatcher("jsp/signIn.jsp").forward(req, resp);
     }
 
     @Override
@@ -46,17 +46,18 @@ public class LoginServlet extends HttpServlet {
                     User user = userService.findObjByEmail(email);
                     if (userService.passwordMatch(password, email)) {
                         session.setAttribute("user", user);
-                        Cookie userName = new Cookie("user_name", user.getFirstName());
+                        Cookie userId = new Cookie("user_id", Integer.toString(user.getUser_id()));
+                        userId.setMaxAge(24 * 60 * 60);
+                        resp.addCookie(userId);
                         session.setAttribute("name", user.getFirstName());
                         session.setAttribute("last_name", user.getLastName());
                         session.setAttribute("email", user.getEmail());
-                        resp.addCookie(userName);
-                        resp.sendRedirect("profile.jsp");
+                        resp.sendRedirect("/profile");
                     } else {
-                        resp.sendRedirect(req.getContextPath() + "signIn");
+                        resp.sendRedirect("jsp/signIn");
                     }
                 } else {
-                    resp.sendRedirect(req.getContextPath() + "signIn");
+                    resp.sendRedirect("jsp/signIn");
                 }
             } catch (SQLException e) {
                 e.printStackTrace();
