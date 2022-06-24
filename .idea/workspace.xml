@@ -11,6 +11,10 @@
   <component name="ChangeListManager">
     <list default="true" id="9bd25052-7c87-4b95-867a-4d6905516283" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/school/cinema/filters/AdminFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/school/cinema/filters/ProfileFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/school/cinema/servlets/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/school/cinema/servlets/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/school/cinema/servlets/ProfileServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/school/cinema/servlets/ProfileServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/school/cinema/servlets/RegistrationServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/school/cinema/servlets/RegistrationServlet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,6 +194,8 @@
       <workItem from="1655391931340" duration="1307000" />
       <workItem from="1655840616805" duration="3675000" />
       <workItem from="1655979820160" duration="5892000" />
+      <workItem from="1656084993547" duration="981000" />
+      <workItem from="1656088229305" duration="2030000" />
     </task>
     <servers />
   </component>
