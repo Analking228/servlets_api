@@ -31,10 +31,7 @@ public class RegistrationServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        HttpSession session = req.getSession();
-        User sessionUser = (User) session.getAttribute("user");
-        if (sessionUser != null) {resp.sendRedirect("/profile");}
-        else {req.getRequestDispatcher("jsp/signUp.jsp").forward(req, resp);}
+        req.getRequestDispatcher("jsp/signUp.jsp").forward(req, resp);
     }
 
     @Override
