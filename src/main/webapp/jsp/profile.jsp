@@ -131,7 +131,32 @@
                 FileInputStream fis = new FileInputStream("/Users/penetrator3000/Documents/42coding/Java/Spring/Cinema/src/main/resources/application.properties");
                 Properties property = new Properties();
                 property.load(fis);
+                String savePath = property.getProperty("images.upload.path");
                 String defaultAvatar = property.getProperty("images.avatar.default");
+                String path = savePath+session.getAttribute("id");
+                File dir = new File(path); //path указывает на директорию
+                File[] arrFiles = dir.listFiles();
+                List<String> lstAvatar = new ArrayList<>();
+                List<Long> lstFileSize = new ArrayList<>();
+                List<String> mimeTypes = new ArrayList<>();
+                if (arrFiles != null) {
+                    for (int i = 0; i < Objects.requireNonNull(arrFiles).length; i++) {
+                        lstAvatar.add(arrFiles[i].getName());
+                        lstFileSize.add(arrFiles[i].length()/1024);
+                        mimeTypes.add(URLConnection.guessContentTypeFromName(arrFiles[i].getName()));
+                    }
+                }
+                else {
+                    lstAvatar.add("");
+                    lstFileSize.add(0L);
+                    mimeTypes.add("");
+                }
+
+                request.setAttribute("urls", lstAvatar);
+                request.setAttribute("sizes",lstFileSize);
+                request.setAttribute("mimeTypes",  mimeTypes);
+                request.setAttribute("urlPath", path);
+                request.setAttribute("defaultAvatar", defaultAvatar);
                 request.setAttribute("defaultAvatar", defaultAvatar);
             %>
             <img src="${pageContext.request.contextPath}/images/<c:out value="${defaultAvatar}"/>" alt="Avatar" title="Avatar" >
@@ -156,6 +181,39 @@
         </div>
     </div>
     <br><br>
+    <h2>Uploaded files</h2>
+    <br>
+    <div class="table2">
+        <div>
+            <div class="colored"><p>File name</p></div>
+            <c:forEach var = "url" items="${urls}">
+                <c:if test="${url !=''}">
+                    <div><p>
+                        <a href="/loadImage/<%= request.getAttribute("id")%>/${url}" target="_blank">${url}</a>
+                    </p></div>
+                </c:if>
+            </c:forEach>
+        </div>
+        <div>
+            <div class="colored"><p>Size</p></div>
+            <c:forEach var = "size" items="${sizes}">
+                <c:if test="${size != 0}">
+                    <div><p>
+                            ${size} Kb
+                    </p></div>
+                </c:if>
+            </c:forEach>
+        </div>
+        <div class="right-border">
+            <div class="colored"><p>MIME</p></div>
+            <c:forEach var = "mimeType" items="${mimeTypes}">
+                <c:if test="${mimeType !=''}">
+                    <div><p>
+                            ${mimeType}
+                    </p></div>
+                </c:if>
+            </c:forEach>
+        </div>
 </div>
 </body>
 </html>

@@ -10,12 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9bd25052-7c87-4b95-867a-4d6905516283" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/1/5827_boobz.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/2/IMG_0731_polarr.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/default_avatar.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/school/cinema/servlets/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/school/cinema/servlets/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/jsp/profile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/profile.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -202,7 +197,7 @@
       <workItem from="1656084993547" duration="981000" />
       <workItem from="1656088229305" duration="4161000" />
       <workItem from="1656407724007" duration="729000" />
-      <workItem from="1656589093227" duration="3688000" />
+      <workItem from="1656589093227" duration="5218000" />
     </task>
     <servers />
   </component>
