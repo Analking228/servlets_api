@@ -122,23 +122,23 @@
     <h1>
         Profile page
     </h1>
-    <form NAME="form1" action="logout" METHOD="post">
-        <INPUT TYPE="SUBMIT" VALUE="Logout">
+    <form name="form1" action="logout" method="post">
+        <INPUT type="submit" value="Logout">
     </form>
     <div class="wrapper">
         <div class="avatar">
             <%
-                FileInputStream fis = new FileInputStream("/Users/penetrator3000/Documents/42coding/Java/Spring/Cinema/src/main/resources/application.properties");
                 Properties property = new Properties();
-                property.load(fis);
+                property.load(new FileInputStream("/Users/penetrator3000/Documents/42coding/Java/Spring/Cinema/src/main/resources/application.properties"));
                 String savePath = property.getProperty("images.upload.path");
                 String defaultAvatar = property.getProperty("images.avatar.default");
                 String path = savePath+session.getAttribute("id");
-                File dir = new File(path); //path указывает на директорию
+                File dir = new File(path);
                 File[] arrFiles = dir.listFiles();
                 List<String> lstAvatar = new ArrayList<>();
                 List<Long> lstFileSize = new ArrayList<>();
                 List<String> mimeTypes = new ArrayList<>();
+
                 if (arrFiles != null) {
                     for (int i = 0; i < Objects.requireNonNull(arrFiles).length; i++) {
                         lstAvatar.add(arrFiles[i].getName());
@@ -189,7 +189,7 @@
             <c:forEach var = "url" items="${urls}">
                 <c:if test="${url !=''}">
                     <div><p>
-                        <a href="/loadImage/<%= request.getAttribute("id")%>/${url}" target="_blank">${url}</a>
+                        <a href="/image/<%= request.getAttribute("id")%>/${url}" target="_blank">${url}</a> // ссылка на сервлет
                     </p></div>
                 </c:if>
             </c:forEach>
