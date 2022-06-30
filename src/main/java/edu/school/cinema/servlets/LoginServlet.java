@@ -49,6 +49,7 @@ public class LoginServlet extends HttpServlet {
                         session.setAttribute("name", user.getFirstName());
                         session.setAttribute("last_name", user.getLastName());
                         session.setAttribute("email", user.getEmail());
+                        req.setAttribute("id", user.getUser_id());
                         resp.sendRedirect("/profile");
                     } else {
                         resp.sendRedirect("jsp/signIn");

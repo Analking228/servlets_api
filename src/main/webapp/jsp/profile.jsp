@@ -13,14 +13,6 @@
 <%@ page import="java.util.Objects" %>
 <%@ page import="java.util.Properties" %>
 <%@ page import="java.io.FileInputStream" %>
-
-<%--
-  Created by IntelliJ IDEA.
-  User: snaomi
-  Date: 15.01.2022
-  Time: 00:47
-  To change this template use File | Settings | File Templates.
---%>
 <%@  page contentType="text/html;charset=UTF-8" %>
 <html lang="ru">
 <head>
@@ -134,6 +126,16 @@
         <INPUT TYPE="SUBMIT" VALUE="Logout">
     </form>
     <div class="wrapper">
+        <div class="avatar">
+            <%
+                FileInputStream fis = new FileInputStream("/Users/penetrator3000/Documents/42coding/Java/Spring/Cinema/src/main/resources/application.properties");
+                Properties property = new Properties();
+                property.load(fis);
+                String defaultAvatar = property.getProperty("images.avatar.default");
+                request.setAttribute("defaultAvatar", defaultAvatar);
+            %>
+            <img src="${pageContext.request.contextPath}/images/<c:out value="${defaultAvatar}"/>" alt="Avatar" title="Avatar" >
+        </div>
         <div>
             <div class="main-chars">
                 <p>Name: <span><%= session.getAttribute("name")%></span></p>
