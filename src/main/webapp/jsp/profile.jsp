@@ -159,7 +159,7 @@
                 request.setAttribute("defaultAvatar", defaultAvatar);
                 request.setAttribute("defaultAvatar", defaultAvatar);
             %>
-            <img src="${pageContext.request.contextPath}/images/<c:out value="${defaultAvatar}"/>" alt="Avatar" title="Avatar" >
+            <img src="/images/<c:out value="${defaultAvatar}"/>" alt="Avatar" title="Avatar" >
         </div>
         <div>
             <div class="main-chars">
@@ -189,7 +189,7 @@
             <c:forEach var = "url" items="${urls}">
                 <c:if test="${url !=''}">
                     <div><p>
-                        <a href="/image/<%= request.getAttribute("id")%>/${url}" target="_blank">${url}</a> // ссылка на сервлет
+                        <a href="/image/<%= session.getAttribute("id")%>/${url}" target="_blank">${url}</a>
                     </p></div>
                 </c:if>
             </c:forEach>
@@ -214,6 +214,7 @@
                 </c:if>
             </c:forEach>
         </div>
+    </div>
 </div>
 </body>
 </html>
