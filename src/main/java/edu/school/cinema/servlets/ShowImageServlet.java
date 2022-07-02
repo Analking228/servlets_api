@@ -26,7 +26,8 @@ public class ShowImageServlet extends HttpServlet {
                 ServletOutputStream out = resp.getOutputStream();
                 FileInputStream fin = new FileInputStream(property.getProperty("images.upload.path") + filename);
                 BufferedInputStream bin = new BufferedInputStream(fin);
-                BufferedOutputStream bout = new BufferedOutputStream(out)) {
+                BufferedOutputStream bout = new BufferedOutputStream(out)
+        ) {
             int ch;
             while ((ch = bin.read()) != -1) {bout.write(ch);}
         }
