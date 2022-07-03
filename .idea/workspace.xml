@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="Cinema:war exploded" />
+      <artifact name="servlets_api:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
@@ -10,8 +10,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9bd25052-7c87-4b95-867a-4d6905516283" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/school/cinema/servlets/ShowImageServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/school/cinema/servlets/ShowImageServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/school/cinema/servlets/ShowImageServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/jsp/profile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/profile.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -30,7 +34,20 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/main/webapp/jsp/profile.jsp" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
@@ -42,6 +59,9 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="29bx5TJsa4SX0NrgwFk5mH2twBJ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -50,15 +70,16 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="postgresql" />
+    <property name="RunConfigurationTargetLRU" value="a8a31e1f-5d71-45c8-a353-3e904ec16fa0" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect" value="PostgreSQL" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/WEB-INF/images_store/2" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="database.main" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -78,20 +99,36 @@
       <recent name="$PROJECT_DIR$/src/main/webapp/jsp" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn clean install" />
+    </option>
+  </component>
+  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.63">
+    <configuration name="data.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
+      <script-file value="$PROJECT_DIR$/src/main/resources/sql/data.sql" />
+      <script-mode>FILE</script-mode>
+      <data-source id="a8a31e1f-5d71-45c8-a353-3e904ec16fa0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="schema.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
+      <script-file value="$PROJECT_DIR$/src/main/resources/sql/schema.sql" />
+      <script-mode>FILE</script-mode>
+      <data-source id="a8a31e1f-5d71-45c8-a353-3e904ec16fa0" />
+      <method v="2" />
+    </configuration>
     <configuration name="Tomcat 9.0.63" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.63" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
-      <option name="OPEN_IN_BROWSER" value="false" />
-      <option name="BROWSER_ID" value="e5120d43-2c3f-47ef-9f26-65e539e05186" />
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="Cinema:war exploded">
+        <artifact name="servlets_api:war exploded">
           <settings>
             <option name="CONTEXT_PATH" value="/" />
           </settings>
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="e7a71ef1-4245-4474-aab7-66952188b306" />
+        <option name="BASE_DIRECTORY_NAME" value="e5c5806c-6871-441f-b2d3-8467b2dab042" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -99,7 +136,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="62014" />
+        <option name="DEBUG_PORT" value="58780" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -164,10 +201,21 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="Cinema:war exploded" />
+          <artifact name="servlets_api:war exploded" />
         </option>
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Database Script.schema.sql" />
+      <item itemvalue="Database Script.data.sql" />
+      <item itemvalue="Tomcat Server.Tomcat 9.0.63" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Database Script.data.sql" />
+        <item itemvalue="Database Script.schema.sql" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -201,6 +249,11 @@
       <workItem from="1656589093227" duration="5558000" />
       <workItem from="1656610679244" duration="663000" />
       <workItem from="1656785718109" duration="955000" />
+      <workItem from="1656848846033" duration="694000" />
+      <workItem from="1656849568208" duration="2412000" />
+      <workItem from="1656852409162" duration="7743000" />
+      <workItem from="1656873121000" duration="2864000" />
+      <workItem from="1656879949270" duration="742000" />
     </task>
     <servers />
   </component>
@@ -217,25 +270,39 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/edu/school/cinema/filters/SignFilter.java</url>
-          <line>18</line>
-          <option name="timeStamp" value="4" />
+          <url>file://$PROJECT_DIR$/src/main/webapp/jsp/profile.jsp</url>
+          <line>133</line>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/edu/school/cinema/filters/SignFilter.java</url>
-          <line>19</line>
-          <option name="timeStamp" value="5" />
+          <url>file://$PROJECT_DIR$/src/main/webapp/jsp/profile.jsp</url>
+          <line>132</line>
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/edu/school/cinema/filters/SignFilter.java</url>
-          <line>20</line>
-          <option name="timeStamp" value="6" />
+          <url>file://$PROJECT_DIR$/src/main/java/edu/school/cinema/servlets/ShowImageServlet.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/school/cinema/servlets/ShowImageServlet.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/school/cinema/servlets/ShowImageServlet.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/school/cinema/servlets/ShowImageServlet.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

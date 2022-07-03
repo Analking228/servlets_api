@@ -129,7 +129,7 @@
         <div class="avatar">
             <%
                 Properties property = new Properties();
-                property.load(new FileInputStream("/Users/penetrator3000/Documents/42coding/Java/Spring/Cinema/src/main/resources/application.properties"));
+                property.load(new FileInputStream("/Users/pmelinda/servlets_api/src/main/resources/application.properties"));
                 String savePath = property.getProperty("images.upload.path");
                 String defaultAvatar = property.getProperty("images.avatar.default");
                 String path = savePath+session.getAttribute("id");
@@ -216,5 +216,14 @@
         </div>
     </div>
 </div>
+
+<form enctype="multipart/form-data" action="/profile" method="post">
+
+    <input type="file" name="file" size="100" />
+    <input type="submit" value="Upload new Pic" />
+    <br />
+
+</form>
+
 </body>
 </html>

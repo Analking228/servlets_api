@@ -15,11 +15,13 @@ import java.util.Properties;
 @WebServlet(name = "showImageServlet", value = "/image/*")
 public class ShowImageServlet extends HttpServlet {
 
+    private final String pathToPicture = "/Users/pmelinda/servlets_api/src/main/resources/application.properties";
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         String filename = req.getRequestURI().substring(req.getRequestURI().indexOf("/", 1) + 1);
         resp.setContentType("image/jpeg");
-        FileInputStream fis = new FileInputStream("/Users/penetrator3000/Documents/42coding/Java/Spring/Cinema/src/main/resources/application.properties");
+        FileInputStream fis = new FileInputStream(pathToPicture);
         Properties property = new Properties();
         property.load(fis);
         try(
@@ -31,5 +33,23 @@ public class ShowImageServlet extends HttpServlet {
             int ch;
             while ((ch = bin.read()) != -1) {bout.write(ch);}
         }
+    }
+
+    protected void doPostImage(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.setContentType("text/jsp");
+        HttpSession session = req.getSession();
+        User user  = (User)session.getAttribute("user");
+        Part filePart = req.getPart("file");
+        File pathToPic = new File(pathToPicture + user.getPhoneNumber());
+
+        String fileName = filePart.getSubmittedFileName();
+        try{
+            for (Part part : req.getParts()) {
+                part.write(pathToPic + File.separator + fileName);
+            }
+        } catch (Exception ignored){}
+        req.getSession().setAttribute("pathImages", pathToPic);
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/profile.jsp");
+        dispatcher.forward(req, resp);
     }
 }
