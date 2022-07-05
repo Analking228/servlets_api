@@ -217,7 +217,7 @@
     </div>
 </div>
 
-<form enctype="multipart/form-data" action="${pageContext.request.contextPath}/image/" method="post">
+<form enctype="multipart/form-data" action="${pageContext.request.contextPath}/image" method="post">
 
     <input type="file" name="file" size="100" />
     <input type="submit" value="Upload new Pic" />

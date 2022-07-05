@@ -5,12 +5,14 @@ import edu.school.cinema.models.User;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.*;
 import java.util.Properties;
 
-@WebServlet(name = "showImageServlet", value = "/image/*")
+@WebServlet(name = "showImageServlet", urlPatterns = {"/image", "/image/*"})
+@MultipartConfig
 public class ShowImageServlet extends HttpServlet {
 
     private final String pathToProperties = "/Users/penetrator3000/Documents/42coding/Java/Spring/Cinema/src/main/resources/application.properties";
@@ -35,7 +37,7 @@ public class ShowImageServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.setContentType("text/image");
+        resp.setContentType("image/jpeg");
         HttpSession session = req.getSession();
         User user  = (User)session.getAttribute("user");
         Part filePart = req.getPart("file");
@@ -51,7 +53,7 @@ public class ShowImageServlet extends HttpServlet {
             }
         } catch (Exception ignored){}
         req.getSession().setAttribute("pathImages", pathToPic);
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/jsp/profile.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("jsp/profile.jsp");
         dispatcher.forward(req, resp);
     }
 }
