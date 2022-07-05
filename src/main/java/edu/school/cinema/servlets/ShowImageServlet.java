@@ -12,7 +12,7 @@ import java.io.*;
 import java.util.Properties;
 
 @WebServlet(name = "showImageServlet", urlPatterns = {"/image", "/image/*"})
-@MultipartConfig
+@MultipartConfig(maxFileSize = 1024*1024*5) // 5Mb
 public class ShowImageServlet extends HttpServlet {
 
     private final String pathToProperties = "/Users/penetrator3000/Documents/42coding/Java/Spring/Cinema/src/main/resources/application.properties";
