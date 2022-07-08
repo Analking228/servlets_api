@@ -176,6 +176,30 @@
                 </div>
                 <div class="right-border">
                     <div class="colored"><p>IP</p></div>
+                    <div><% String[] IP_HEADER_CANDIDATES = {
+                            "X-Forwarded-For",
+                            "Proxy-Client-IP",
+                            "WL-Proxy-Client-IP",
+                            "HTTP_X_FORWARDED_FOR",
+                            "HTTP_X_FORWARDED",
+                            "HTTP_X_CLUSTER_CLIENT_IP",
+                            "HTTP_CLIENT_IP",
+                            "HTTP_FORWARDED_FOR",
+                            "HTTP_FORWARDED",
+                            "HTTP_VIA",
+                            "REMOTE_ADDR" };
+                        lol:{
+                            for (String header : IP_HEADER_CANDIDATES) {
+                                String ip = request.getHeader(header);
+                                if (ip != null && ip.length() != 0 && !"unknown".equalsIgnoreCase(ip)) {
+                                    request.setAttribute("ip", ip);
+                                    break lol;
+                                }
+                            }
+                            String ip = request.getRemoteAddr();
+                            request.setAttribute("ip", ip);
+                        }
+                    %><%= request.getAttribute("ip")%></div>
                 </div>
             </div>
         </div>
