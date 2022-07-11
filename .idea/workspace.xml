@@ -11,6 +11,16 @@
   <component name="ChangeListManager">
     <list default="true" id="9bd25052-7c87-4b95-867a-4d6905516283" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/school/cinema/models/Log.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/school/cinema/models/Log.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/school/cinema/models/LogMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/school/cinema/models/LogMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/school/cinema/repositories/LogRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/school/cinema/repositories/LogRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/school/cinema/repositories/LogRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/school/cinema/repositories/LogRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/school/cinema/services/LogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/school/cinema/services/LogService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/school/cinema/servlets/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/school/cinema/servlets/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/school/cinema/servlets/RegistrationServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/school/cinema/servlets/RegistrationServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/sql/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sql/data.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/sql/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sql/schema.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsp/profile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/profile.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,7 +209,8 @@
       <workItem from="1656589093227" duration="5558000" />
       <workItem from="1656610679244" duration="663000" />
       <workItem from="1656785718109" duration="955000" />
-      <workItem from="1657027585257" duration="9259000" />
+      <workItem from="1657027585257" duration="9418000" />
+      <workItem from="1657542652287" duration="4325000" />
     </task>
     <servers />
   </component>

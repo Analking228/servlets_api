@@ -15,8 +15,9 @@ CREATE TABLE IF NOT EXISTS cinema.users(
 create table IF NOT EXISTS cinema.logs
 (
     log_id SERIAL PRIMARY KEY,
-    email VARCHAR(100) NOT NULL ,
+    user_email VARCHAR(100) NOT NULL ,
     ip VARCHAR(100) NOT NULL,
-    date timestamp not null default now()
+    date DATE NOT NULL,
+    time TIME NOT NULL
 );
 
