@@ -1,17 +1,21 @@
 package edu.school.cinema.models;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-
+@Getter
+@Setter
+@NoArgsConstructor
 public class Log {
     private int     userId;
     private String  email;
     private String  date;
     private String  time;
-
-    Log(){}
 
     Log(int userId, String email){
         this.userId = userId;
@@ -21,37 +25,5 @@ public class Log {
         DateFormat formatterDate = new SimpleDateFormat("yyyy-MM-dd");
         time = formatterTime.format(now);
         date = formatterDate.format(now);
-    }
-
-    public int getUserId() {
-        return userId;
-    }
-
-    public void setUserId(int userId) {
-        this.userId = userId;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
-    }
-
-    public String getTime() {
-        return time;
-    }
-
-    public void setTime(String time) {
-        this.time = time;
     }
 }
