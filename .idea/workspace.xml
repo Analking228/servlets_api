@@ -11,8 +11,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9bd25052-7c87-4b95-867a-4d6905516283" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsp/profile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/profile.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,7 +203,8 @@
       <workItem from="1657027585257" duration="9418000" />
       <workItem from="1657542652287" duration="4713000" />
       <workItem from="1657646144552" duration="3136000" />
-      <workItem from="1657801828296" duration="3080000" />
+      <workItem from="1657801828296" duration="3899000" />
+      <workItem from="1657812566650" duration="410000" />
     </task>
     <servers />
   </component>
