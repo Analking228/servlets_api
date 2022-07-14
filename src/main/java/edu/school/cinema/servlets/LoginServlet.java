@@ -1,6 +1,8 @@
 package edu.school.cinema.servlets;
 
+import edu.school.cinema.models.Log;
 import edu.school.cinema.models.User;
+import edu.school.cinema.services.LogService;
 import edu.school.cinema.services.UserService;
 import org.springframework.context.ApplicationContext;
 
@@ -17,6 +19,7 @@ import java.sql.SQLException;
 public class LoginServlet extends HttpServlet {
 
     private UserService userService;
+    private LogService  logService;
 
     @Override
     public void init(ServletConfig config) throws ServletException {
@@ -24,6 +27,7 @@ public class LoginServlet extends HttpServlet {
         ServletContext context = config.getServletContext();
         ApplicationContext springContext = (ApplicationContext) context.getAttribute("springContext");
         this.userService = springContext.getBean("userService", UserService.class);
+        this.logService = springContext.getBean("logService", LogService.class);
     }
 
     @Override
@@ -50,6 +54,9 @@ public class LoginServlet extends HttpServlet {
                         session.setAttribute("last_name", user.getLastName());
                         session.setAttribute("email", user.getEmail());
                         session.setAttribute("id", user.getUser_id());
+                        Log log = new Log(user.getEmail(), req.getRemoteAddr());
+                        logService.save(log);
+                        session.setAttribute("logs", logService.findAllByEmail(user.getEmail()));
                         resp.sendRedirect("/profile");
                     } else {
                         resp.sendRedirect("jsp/signIn");

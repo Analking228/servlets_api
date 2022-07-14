@@ -13,6 +13,7 @@
 <%@ page import="java.util.Objects" %>
 <%@ page import="java.util.Properties" %>
 <%@ page import="java.io.FileInputStream" %>
+<%@ page import="edu.school.cinema.models.Log" %>
 <%@  page contentType="text/html;charset=UTF-8" %>
 <html lang="ru">
 <head>
@@ -157,9 +158,8 @@
                 request.setAttribute("mimeTypes",  mimeTypes);
                 request.setAttribute("urlPath", path);
                 request.setAttribute("defaultAvatar", defaultAvatar);
-                request.setAttribute("defaultAvatar", defaultAvatar);
             %>
-            <img src="/images/<c:out value="${defaultAvatar}"/>" alt="Avatar" title="Avatar" >
+            <img src="<%=request.getContextPath()%>/images/${defaultAvatar}" alt="Avatar" title="Avatar">
         </div>
         <div>
             <div class="main-chars">
@@ -168,38 +168,32 @@
                 <p>E-mail:<span><%= session.getAttribute("email")%></span></p>
             </div>
             <div class="table1">
+                <%
+                    List<Log> logs = (List<Log>)session.getAttribute("logs");
+                    request.setAttribute("logsList", logs);
+                %>
                 <div>
                     <div class="colored"><p>Date</p></div>
+                    <c:forEach var="item" items="${logsList}">
+                        <p>${item.date}</p>
+                    </c:forEach>
                 </div>
                 <div>
                     <div class="colored"><p>Time</p></div>
+                    <c:forEach var="item" items="${logsList}">
+                        <p>${item.time}</p>
+                    </c:forEach>
                 </div>
                 <div class="right-border">
                     <div class="colored"><p>IP</p></div>
-                    <div><% String[] IP_HEADER_CANDIDATES = {
-                            "X-Forwarded-For",
-                            "Proxy-Client-IP",
-                            "WL-Proxy-Client-IP",
-                            "HTTP_X_FORWARDED_FOR",
-                            "HTTP_X_FORWARDED",
-                            "HTTP_X_CLUSTER_CLIENT_IP",
-                            "HTTP_CLIENT_IP",
-                            "HTTP_FORWARDED_FOR",
-                            "HTTP_FORWARDED",
-                            "HTTP_VIA",
-                            "REMOTE_ADDR" };
-                        lol:{
-                            for (String header : IP_HEADER_CANDIDATES) {
-                                String ip = request.getHeader(header);
-                                if (ip != null && ip.length() != 0 && !"unknown".equalsIgnoreCase(ip)) {
-                                    request.setAttribute("ip", ip);
-                                    break lol;
-                                }
-                            }
-                            String ip = request.getRemoteAddr();
-                            request.setAttribute("ip", ip);
-                        }
-                    %><%= request.getAttribute("ip")%></div>
+                    <c:forEach var="item" items="${logsList}">
+                        <c:if test = "${item.ip == '0:0:0:0:0:0:0:1'}">
+                            <p>${'127.0.0.1'}</p>
+                        </c:if>
+                        <c:if test = "${item.ip != '0:0:0:0:0:0:0:1'}">
+                            <p>${item.ip}</p>
+                        </c:if>
+                    </c:forEach>
                 </div>
             </div>
         </div>

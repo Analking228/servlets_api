@@ -9,9 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9bd25052-7c87-4b95-867a-4d6905516283" name="Changes" comment="add instruction in README.txt">
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+    <list default="true" id="9bd25052-7c87-4b95-867a-4d6905516283" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/jsp/profile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/profile.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +62,7 @@
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect" value="PostgreSQL" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/WEB-INF/images_store/2" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="database.main" />
@@ -211,18 +212,11 @@
       <workItem from="1656589093227" duration="5558000" />
       <workItem from="1656610679244" duration="663000" />
       <workItem from="1656785718109" duration="955000" />
-      <workItem from="1657027585257" duration="8104000" />
-      <workItem from="1657783150374" duration="1079000" />
-      <workItem from="1657804594242" duration="1742000" />
+      <workItem from="1657027585257" duration="9418000" />
+      <workItem from="1657542652287" duration="4713000" />
+      <workItem from="1657646144552" duration="3136000" />
+      <workItem from="1657801828296" duration="3080000" />
     </task>
-    <task id="LOCAL-00001" summary="add instruction in README.txt">
-      <created>1657808598796</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1657808598797</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -239,9 +233,5 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="add instruction in README.txt" />
-    <option name="LAST_COMMIT_MESSAGE" value="add instruction in README.txt" />
   </component>
 </project>

@@ -1,6 +1,8 @@
 package edu.school.cinema.servlets;
 
+import edu.school.cinema.models.Log;
 import edu.school.cinema.models.User;
+import edu.school.cinema.services.LogService;
 import edu.school.cinema.services.UserService;
 import org.springframework.context.ApplicationContext;
 
@@ -13,13 +15,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.SQLException;
 
 @WebServlet(name = "registrationServlet", value = "/signUp")
 public class RegistrationServlet extends HttpServlet {
 
     private UserService userService;
+    private LogService  logService;
 
     @Override
     public void init(ServletConfig config) throws ServletException {
@@ -27,6 +29,7 @@ public class RegistrationServlet extends HttpServlet {
         ServletContext context = config.getServletContext();
         ApplicationContext springContext = (ApplicationContext) context.getAttribute("springContext");
         this.userService = springContext.getBean("userService", UserService.class);
+        this.logService = springContext.getBean("logService", LogService.class);
     }
 
     @Override
@@ -56,8 +59,11 @@ public class RegistrationServlet extends HttpServlet {
                 session.setAttribute("name", sessionUser.getFirstName());
                 session.setAttribute("last_name", sessionUser.getLastName());
                 session.setAttribute("email", sessionUser.getEmail());
+                Log log = new Log(sessionUser.getEmail(), req.getRemoteAddr());
+                logService.save(log);
+                session.setAttribute("logs", logService.findAllByEmail(sessionUser.getEmail()));
+                resp.sendRedirect("/profile");
             }
-            resp.sendRedirect("/profile");
         } catch (SQLException e) {
             e.printStackTrace();
         }
