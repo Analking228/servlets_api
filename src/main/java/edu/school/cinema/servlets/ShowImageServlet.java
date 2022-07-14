@@ -11,11 +11,11 @@ import javax.servlet.http.*;
 import java.io.*;
 import java.util.Properties;
 
-@WebServlet(name = "showImageServlet", urlPatterns = {"/image", "/image/*"})
+@WebServlet(name = "showImageServlet", urlPatterns = {"/images", "/images/*"})
 @MultipartConfig(maxFileSize = 1024*1024*5) // 5Mb
 public class ShowImageServlet extends HttpServlet {
 
-    private final String pathToProperties = "/Users/penetrator3000/Documents/42coding/Java/Spring/Cinema/src/main/resources/application.properties";
+    private final String pathToProperties = "src/main/resources/application.properties";
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {

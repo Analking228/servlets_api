@@ -207,7 +207,7 @@
             <c:forEach var = "url" items="${urls}">
                 <c:if test="${url !=''}">
                     <div><p>
-                        <a href="/image/<%= session.getAttribute("id")%>/${url}" target="_blank">${url}</a>
+                        <a href="/images/<%= session.getAttribute("id")%>/${url}" target="_blank">${url}</a>
                     </p></div>
                 </c:if>
             </c:forEach>
@@ -235,7 +235,7 @@
     </div>
 </div>
 
-<form enctype="multipart/form-data" action="${pageContext.request.contextPath}/image" method="post">
+<form enctype="multipart/form-data" action="${pageContext.request.contextPath}/images" method="post">
 
     <input type="file" name="file" size="100" />
     <input type="submit" value="Upload new Pic" />
