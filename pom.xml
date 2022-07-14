@@ -75,6 +75,32 @@
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
         <plugin>
+          <groupId>org.codehaus.cargo</groupId>
+          <artifactId>cargo-maven3-plugin</artifactId>
+          <version>1.9.3</version>
+          <configuration>
+            <container>
+              <containerId>tomcat9x</containerId>
+              <type>embedded</type>
+            </container>
+            <configuration>
+              <properties>
+                <!--                            <cargo.servlet.port>8188</cargo.servlet.port>-->
+                <!--                            <cargo.tomcat.ajp.port>8086</cargo.tomcat.ajp.port>-->
+              </properties>
+            </configuration>
+            <deployables>
+              <deployable>
+                <type>war</type>
+                <location>target/${project.artifactId}.war</location>
+                <properties>
+                  <context>/</context>
+                </properties>
+              </deployable>
+            </deployables>
+          </configuration>
+        </plugin>
+        <plugin>
           <artifactId>maven-clean-plugin</artifactId>
           <version>3.1.0</version>
         </plugin>

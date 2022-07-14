@@ -158,9 +158,8 @@
                 request.setAttribute("mimeTypes",  mimeTypes);
                 request.setAttribute("urlPath", path);
                 request.setAttribute("defaultAvatar", defaultAvatar);
-                request.setAttribute("defaultAvatar", defaultAvatar);
             %>
-            <img src="/images/<c:out value="${defaultAvatar}"/>" alt="Avatar" title="Avatar" >
+            <img src="<%=request.getContextPath()%>/images/${defaultAvatar}" alt="Avatar" title="Avatar">
         </div>
         <div>
             <div class="main-chars">

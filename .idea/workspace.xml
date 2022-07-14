@@ -11,15 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9bd25052-7c87-4b95-867a-4d6905516283" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/school/cinema/models/Log.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/school/cinema/models/Log.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/school/cinema/models/LogMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/school/cinema/models/LogMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/school/cinema/repositories/LogRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/school/cinema/repositories/LogRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/school/cinema/repositories/LogRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/school/cinema/repositories/LogRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/school/cinema/services/LogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/school/cinema/services/LogService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/school/cinema/servlets/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/school/cinema/servlets/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/school/cinema/servlets/RegistrationServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/school/cinema/servlets/RegistrationServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/sql/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sql/data.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/sql/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sql/schema.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/jsp/profile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/jsp/profile.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -64,7 +56,8 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect" value="PostgreSQL" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/WEB-INF/images_store/2" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="database.main" />
@@ -210,7 +203,9 @@
       <workItem from="1656610679244" duration="663000" />
       <workItem from="1656785718109" duration="955000" />
       <workItem from="1657027585257" duration="9418000" />
-      <workItem from="1657542652287" duration="4325000" />
+      <workItem from="1657542652287" duration="4713000" />
+      <workItem from="1657646144552" duration="3136000" />
+      <workItem from="1657801828296" duration="3080000" />
     </task>
     <servers />
   </component>
