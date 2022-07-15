@@ -42,8 +42,6 @@ public class ShowImageServlet extends HttpServlet {
         User user  = (User)session.getAttribute("user");
         Part filePart = req.getPart("file");
 
-        uniqueFileNameValidation(filePart);
-
         FileInputStream fis = new FileInputStream(pathToProperties);
         Properties property = new Properties();
         property.load(fis);
@@ -58,11 +56,5 @@ public class ShowImageServlet extends HttpServlet {
         req.getSession().setAttribute("pathImages", pathToPic);
         RequestDispatcher dispatcher = req.getRequestDispatcher("jsp/profile.jsp");
         dispatcher.forward(req, resp);
-    }
-
-    private void uniqueFileNameValidation(Part filePart) throws IOException {
-        if(filePart.getSubmittedFileName().contentEquals()){
-            throw new IOException("this file name already exists");
-        }
     }
 }
