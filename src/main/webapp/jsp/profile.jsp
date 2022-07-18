@@ -157,9 +157,10 @@
                 request.setAttribute("sizes",lstFileSize);
                 request.setAttribute("mimeTypes",  mimeTypes);
                 request.setAttribute("urlPath", path);
-                request.setAttribute("defaultAvatar", defaultAvatar);
+                String avatar = (String)session.getAttribute("defaultAvatar");
+                if (avatar == null){session.setAttribute("defaultAvatar", defaultAvatar);}
             %>
-            <img src="<%=request.getContextPath()%>/images/${defaultAvatar}" alt="Avatar" title="Avatar">
+            <img src="<%=request.getContextPath()%>/images/<%=session.getAttribute("defaultAvatar")%>" alt="Avatar" title="Avatar">
         </div>
         <div>
             <div class="main-chars">

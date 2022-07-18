@@ -50,6 +50,7 @@ public class ShowImageServlet extends HttpServlet {
         try{
             for (Part part : req.getParts()) {
                 part.write(pathToPic + File.separator + fileName);
+                session.setAttribute("defaultAvatar", session.getAttribute("id") + "/" + fileName);
             }
         } catch (Exception ignored){}
         req.getSession().setAttribute("pathImages", pathToPic);
