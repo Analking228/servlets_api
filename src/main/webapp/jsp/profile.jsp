@@ -14,6 +14,7 @@
 <%@ page import="java.util.Properties" %>
 <%@ page import="java.io.FileInputStream" %>
 <%@ page import="edu.school.cinema.models.Log" %>
+<%@ page import="java.util.Arrays" %>
 <%@  page contentType="text/html;charset=UTF-8" %>
 <html lang="ru">
 <head>
@@ -142,6 +143,9 @@
 
                 if (arrFiles != null) {
                     for (int i = 0; i < Objects.requireNonNull(arrFiles).length; i++) {
+                        if(arrFiles[i].getName().contentEquals(Arrays.stream(arrFiles).findFirst().toString())){
+                            throw new ServletException("This filename already exists");
+                        }
                         lstAvatar.add(arrFiles[i].getName());
                         lstFileSize.add(arrFiles[i].length()/1024);
                         mimeTypes.add(URLConnection.guessContentTypeFromName(arrFiles[i].getName()));
@@ -239,7 +243,7 @@
 <form enctype="multipart/form-data" action="${pageContext.request.contextPath}/images" method="post">
 
     <input type="file" name="file" size="100" />
-    <input type="submit" value="Upload new Pic" />
+    <input type="submit" value="Upload new picture" />
     <br />
 
 </form>

@@ -41,6 +41,7 @@ public class ShowImageServlet extends HttpServlet {
         HttpSession session = req.getSession();
         User user  = (User)session.getAttribute("user");
         Part filePart = req.getPart("file");
+
         FileInputStream fis = new FileInputStream(pathToProperties);
         Properties property = new Properties();
         property.load(fis);
