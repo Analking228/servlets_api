@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.SQLException;
 
 @WebServlet(name = "registrationServlet", value = "/signUp")
@@ -53,16 +54,23 @@ public class RegistrationServlet extends HttpServlet {
             sessionUser.setEmail(email);
             String  password = req.getParameter("password");
             sessionUser.setPassword(password);
-            userService.save(sessionUser);
-            if (userService.passwordMatch(password, email)) {
-                session.setAttribute("user", sessionUser);
-                session.setAttribute("name", sessionUser.getFirstName());
-                session.setAttribute("last_name", sessionUser.getLastName());
-                session.setAttribute("email", sessionUser.getEmail());
-                Log log = new Log(sessionUser.getEmail(), req.getRemoteAddr());
-                logService.save(log);
-                session.setAttribute("logs", logService.findAllByEmail(sessionUser.getEmail()));
-                resp.sendRedirect("/profile");
+            if (userService.findByEmail(email)){
+                try (PrintWriter writer = resp.getWriter()) {
+                    writer.println("you already have an account, please log in");
+                }
+            }
+            else {
+                userService.save(sessionUser);
+                if (userService.passwordMatch(password, email)) {
+                    session.setAttribute("user", sessionUser);
+                    session.setAttribute("name", sessionUser.getFirstName());
+                    session.setAttribute("last_name", sessionUser.getLastName());
+                    session.setAttribute("email", sessionUser.getEmail());
+                    Log log = new Log(sessionUser.getEmail(), req.getRemoteAddr());
+                    logService.save(log);
+                    session.setAttribute("logs", logService.findAllByEmail(sessionUser.getEmail()));
+                    resp.sendRedirect("/profile");
+                }
             }
         } catch (SQLException e) {
             e.printStackTrace();

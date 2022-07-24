@@ -9,7 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9bd25052-7c87-4b95-867a-4d6905516283" name="Changes" comment="" />
+    <list default="true" id="9bd25052-7c87-4b95-867a-4d6905516283" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/school/cinema/servlets/RegistrationServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/school/cinema/servlets/RegistrationServlet.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -225,6 +227,7 @@
       <workItem from="1657801828296" duration="3899000" />
       <workItem from="1657812566650" duration="4270000" />
       <workItem from="1658140057736" duration="1681000" />
+      <workItem from="1658676481475" duration="299000" />
     </task>
     <servers />
   </component>
